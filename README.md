@@ -94,7 +94,7 @@ Destroy complete! Resources: 13 destroyed.
     <img src="./assets/images/s3.png"/>
 </div>
 
-- Amazon [Elastic Beanstalk](https://ap-southeast-1.console.aws.amazon.com/elasticbeanstalk/) resouces
+- [Amazon Elastic Beanstalk](https://ap-southeast-1.console.aws.amazon.com/elasticbeanstalk/) resouces
 
 <div align="center">
     <img src="./assets/images/ebs.png"/>
