@@ -1,7 +1,7 @@
-The example project for StringBoot service
+The example project for Deployment SpringBoot application on Amazon Elastic Beanstalk
 
 <div align="center">
-    <img src="./assets/images/spring_boot_icon.png"/>
+    <img src="./assets/images/aws_beanstalk_example.png"/>
 </div>
 
 ## Getting Started
@@ -9,14 +9,19 @@ The example project for StringBoot service
 ## Project structure
 ```
 .
-├── hello-world
+├── hello-world/
 │   ├── src
 |   ├── pom.xml
 │   ...
-├── terraform
-│   ├── ecr
-│   ├── ecs
-|
+├── infrastructure
+│   ├── modules/
+|   │   ├── beanstalk/
+|   │   ├── network/
+|   │   ├── rds/
+│   │   └── s3/
+│   ├── main.tf
+|   ├── outputs.tf
+|   └── variables.tf
 └── README.md
 ```
 
@@ -34,29 +39,7 @@ aws_secret_access_key=<your-key>
 
 - Install [Docker](https://docs.docker.com/engine/install/)
     
-## Build and deploy
-
-First, you need add your aws account id
-
-Add ```export AWS_ACCOUNT_ID=<your acccount id>``` in file ~/.bash_profile then 
-```shell script
-$ source ~/.bash_profile
-```
-
-Test by command
-```shell script
-$ echo $AWS_ACCOUNT_ID
-<your account id>
-```
-
-
-### Initiative resource
-
-```shell script
-$ make init
-````
-
-### Build spring-boot application
+## Build spring-boot application
 
 ```shell script
 $ make build
@@ -67,38 +50,62 @@ $ make build
 [INFO] ------------------------------------------------------------------------
 ```
 
-### Build docker image & push to ECR
+## Deploy on aws
+
+- Initialize Terraform and the Cloudflare provider
 
 ```shell script
-$  make push
+$ make init
+```
+
+- Apply Terraform to deploy on aws
+
+```shell script
+$ make deploy
 ```
 
 ### Deploy resource on AWS
 
 ```shell script
 $ make deploy
-Apply complete! Resources: 35 added, 0 changed, 0 destroyed.
+...
+Apply complete! Resources: 13 added, 0 changed, 0 destroyed
 
 Outputs:
 
-alb_hostname = "<your alb_hostname>"
+ebs_endpoint = "<ebs_endpoint>"
 ```
 
-### Destroy resource 
+### Test request
+
+Send request to your EBS endpoint 
 
 ```shell script
-$ make destroys
-
-```
-
-## Test request
-
-Send request to your AWS LoadBalancer
-
-```shell script
-$ curl http://<alb_hostname>/greet?name=World
+$  curl http://<ebs_endpoint>/greet?name=World
 Hello World!
 ```
+
+### Destroy resource on aws
+
+```shell script
+$ make destroy
+...
+Destroy complete! Resources: 13 destroyed.
+```
+
+## Resource on AWS
+
+- [Amazon S3](https://s3.console.aws.amazon.com/) resouces
+
+<div align="center">
+    <img src="./assets/images/s3.png"/>
+</div>
+
+- Amazon [Elastic Beanstalk](https://ap-southeast-1.console.aws.amazon.com/elasticbeanstalk/) resouces
+
+<div align="center">
+    <img src="./assets/images/ebs.png"/>
+</div>
 
 ## Contributing
 
@@ -112,9 +119,7 @@ The code is open sourced. I encourage fellow developers to contribute and help i
 - Create new Pull Request
 
 ## Reference
-- https://github.com/bradford-hamilton/terraform-ecs-fargate
-- https://docs.aws.amazon.com/AmazonECR/latest/userguide/getting-started-cli.html
-- https://medium.com/@bradford_hamilton/deploying-containers-on-amazons-ecs-using-fargate-and-terraform-part-2-2e6f6a3a957f
+- https://dimitri.codes/spring-boot-terraform/
 
 ## License
 This project is licensed under the Apache License v2.0. Please see LICENSE located at the project's root for more details.

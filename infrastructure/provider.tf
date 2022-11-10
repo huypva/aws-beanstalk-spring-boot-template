@@ -1,4 +1,3 @@
-# Specify the provider and access details
 terraform {
   required_providers {
     aws = {
@@ -6,9 +5,11 @@ terraform {
       version = "~> 4.0"
     }
   }
+
 }
 
 # Configure the AWS Provider
 provider "aws" {
   region = var.aws_region
+  shared_credentials_files = ["$HOME/.aws/credentials"]
 }

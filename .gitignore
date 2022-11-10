@@ -48,7 +48,7 @@ nb-configuration.xml
 *.tfstate
 *.tfstate.*
 *.terraform.lock.*
-terraform/plan.out
+infrastructure/plan.out
 
 # OS
 .DS_Store
