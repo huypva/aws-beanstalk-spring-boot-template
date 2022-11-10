@@ -17,7 +17,6 @@ The example project for Deployment SpringBoot application on Amazon Elastic Bean
 │   ├── modules/
 |   │   ├── beanstalk/
 |   │   ├── network/
-|   │   ├── rds/
 │   │   └── s3/
 │   ├── main.tf
 |   ├── outputs.tf
