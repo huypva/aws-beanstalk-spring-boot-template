@@ -61,12 +61,6 @@ $ make init
 
 ```shell script
 $ make deploy
-```
-
-### Deploy resource on AWS
-
-```shell script
-$ make deploy
 ...
 Apply complete! Resources: 13 added, 0 changed, 0 destroyed
 
@@ -80,7 +74,7 @@ ebs_endpoint = "<ebs_endpoint>"
 Send request to your EBS endpoint 
 
 ```shell script
-$  curl http://<ebs_endpoint>/greet?name=World
+$ curl http://<ebs_endpoint>/greet?name=World
 Hello World!
 ```
 
