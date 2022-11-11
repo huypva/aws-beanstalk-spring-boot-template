@@ -50,6 +50,7 @@ resource "aws_elastic_beanstalk_environment" "ebs_env" {
     name = "SecurityGroups"
     value = aws_security_group.ebs_sg.id
   }
+
   setting {
     namespace = "aws:ec2:vpc"
     name      = "VPCId"

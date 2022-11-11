@@ -102,7 +102,7 @@ Destroy complete! Resources: 13 destroyed.
 
 - [EC2](https://ap-southeast-1.console.aws.amazon.com/ec2/home)
 <div align="center">
-    <img src="./assets/images/ebs.png"/>
+    <img src="./assets/images/ec2.png"/>
 </div>
 
 ## Contributing
