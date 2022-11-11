@@ -100,6 +100,11 @@ Destroy complete! Resources: 13 destroyed.
     <img src="./assets/images/ebs.png"/>
 </div>
 
+- [EC2](https://ap-southeast-1.console.aws.amazon.com/ec2/home)
+<div align="center">
+    <img src="./assets/images/ebs.png"/>
+</div>
+
 ## Contributing
 
 The code is open sourced. I encourage fellow developers to contribute and help improve it!
