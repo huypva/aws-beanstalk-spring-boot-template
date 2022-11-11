@@ -24,8 +24,8 @@ destroy:
 
 clean:
 	@./mvnw clean
-	@rm -rf infrastructure/*/.terraform
-	@rm -rf infrastructure/*/.terraform.lock.hcl
-	@rm -rf infrastructure/*/*.tfplan
-	@rm -rf infrastructure/*/terraform.tfstate
-	@rm -rf infrastructure/*/terraform.tfstate.backup
+	@rm -rf ./infrastructure/.terraform
+	@rm -rf ./infrastructure/.terraform.lock.hcl
+	@rm -rf ./infrastructure/*.tfplan
+	@rm -rf ./infrastructure/terraform.tfstate
+	@rm -rf ./infrastructure/terraform.tfstate.backup
