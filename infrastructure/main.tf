@@ -27,7 +27,7 @@ module "ebs" {
   vpc_id      = module.vpc.vpc_id
   subnet_ids  = module.vpc.public_subnet_ids
   s3_bucket_id = module.s3.s3_bucket_id
-  s3_oject_id = module.s3.s3_object_id
+  s3_object_id = module.s3.s3_object_id
   app_name    = var.app_name
   app_version = var.app_version
 }
