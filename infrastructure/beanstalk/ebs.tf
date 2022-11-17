@@ -47,8 +47,8 @@ resource "aws_elastic_beanstalk_environment" "ebs_env" {
 
   setting {
     namespace = "aws:autoscaling:launchconfiguration"
-    name = "SecurityGroups"
-    value = aws_security_group.ebs_sg.id
+    name = "EC2KeyName"
+    value = aws_key_pair.ebs_key_pair.id
   }
 
   setting {

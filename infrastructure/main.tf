@@ -16,8 +16,7 @@ module "s3" {
   source      = "./s3"
 
   prefix      = var.prefix
-  app_name    = var.app_name
-  app_version = var.app_version
+  app_file    = "${path.root}/../${var.app_name}/target/${var.app_name}-${var.app_version}.jar"
 }
 
 module "ebs" {
