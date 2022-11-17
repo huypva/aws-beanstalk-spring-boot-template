@@ -5,7 +5,7 @@ resource "aws_elastic_beanstalk_application" "ebs_app" {
 resource "aws_elastic_beanstalk_application_version" "ebs_app_version" {
   application = aws_elastic_beanstalk_application.ebs_app.name
   bucket = var.s3_bucket_id
-  key = var.s3_bucket_object_id
+  key = var.s3_object_id
   name = "${var.app_name}-${var.app_version}"
 }
 
